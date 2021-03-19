@@ -1,8 +1,9 @@
 from flask import Flask, json, request
+from flask_cors import CORS
 from database import Database
 
 app = Flask(__name__)
-
+cors = CORS(app, resources={r"/api/*": {"origin": "*"}})
 db = Database()
 
 
