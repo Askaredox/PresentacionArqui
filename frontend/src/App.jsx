@@ -1,3 +1,4 @@
+import React from 'react';
 import './App.css';
 import { LineChart, Line, CartesianGrid, XAxis, YAxis, Legend } from 'recharts';
 import { Servicio } from "./Servicio";
@@ -6,7 +7,7 @@ class App extends React.Component {
   constructor(){
     super();
     this.state = {
-      analogo=[
+      analogo:[
         { name: '00:00:00', data: 0 },
         { name: '00:00:00', data: 0 },
         { name: '00:00:00', data: 0 },
@@ -44,7 +45,7 @@ class App extends React.Component {
 
   getData = () => {
     let datos = this.state.analogo;
-    datos = datos1.slice(1);
+    datos = datos.slice(1);
 
     Servicio.fetch().then(value => {
         datos.push(value);

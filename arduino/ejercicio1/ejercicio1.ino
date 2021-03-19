@@ -5,7 +5,8 @@
 const char* ssid = "ASKAR";
 const char* password = "A1n4d0y6_!";
 
-String serverName = "http://192.168.0.101:5000";
+String serverName = "http://13.58.130.210:5000";
+//String serverName = "http://192.168.0.101:5000";
 
 unsigned long lastTime = 0;
 
