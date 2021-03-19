@@ -1,0 +1,32 @@
+version: '3'
+
+services: 
+    frontend:
+        build: frontend/.
+        container_name: frontend
+        ports:
+            - "80:80"
+        volumes:
+            - .:/react/app
+        networks: 
+            app_net:
+                ipv4_address: 172.19.0.2
+
+    serve:
+        build: backend/.
+        container_name: serve
+        ports:
+            - "5000:5000"
+        volumes:
+            - .:/flask/codeSERVE
+        networks: 
+            app_net:
+                ipv4_address: 172.19.0.3
+
+
+networks:
+    app_net:
+        ipam:
+            driver: default
+            config:
+            - subnet: "172.19.0.0/24"
