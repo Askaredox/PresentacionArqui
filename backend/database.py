@@ -7,7 +7,7 @@ class Database:
         return {'encendido':self.encendido, 'analogo':self.analogo}
 
     def setEncendido(self, val):
-        nval = bool(val)
+        nval = val == 'true'
         if type(nval) == type(True):
             self.encendido = nval
             return nval
